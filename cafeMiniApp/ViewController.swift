@@ -102,7 +102,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         if adminCheck == false{
         menu2.append(itemEnter.text!)
-        menuItems["\(itemEnter.text!.lowercased())"] = Double(priceEnter.text!)
+            menuItems["\(itemEnter.text!.lowercased())"] = Double(priceEnter.text ?? "0")
         print(menu2)
         print(menuItems)
         adminMenu.text = ""
@@ -141,7 +141,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         menu2.sort()
         normalMenu.text = ""
         for string in menu2{
-            normalMenu.text = "\(normalMenu.text ?? "")\(string)       \t \t     $\(menuItems[string.lowercased()]!)0\n"
+            normalMenu.text = "\(normalMenu.text ?? "")\(string) \t \t  $\(menuItems[string.lowercased()]!)0\n"
         }
     }
     @IBAction func priceButton(_ sender: UIButton) {
